@@ -1,0 +1,120 @@
+@use './responsive.scss' as *;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body{
+  width: 100vw;
+  background-color: hsl(210, 36%, 96%);
+
+}
+
+.App {
+  min-height: 100vh;
+  position: relative;
+  background-color: darkslategray;
+
+  .calc{
+    @include mobile{
+      width: 90%;
+    }
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 120px;
+    padding: 20px;
+    width: 50%;
+    background-color: #fff;
+    border-radius: 12px;
+
+    .screen{
+      padding: 0 8px;
+      min-height: 70px;
+      background-color: rgba(38, 38, 38, 0.586);
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction:  column;
+
+      .screenValue{
+        flex: 1;
+        display: flex;
+        align-items: center;
+      }
+
+      .screenAnswer{
+        flex: 1;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .clearBtns{
+      padding: 0 10px;
+      display: flex;
+      justify-content: flex-end;
+
+      .clearBtn{
+        background-color: rgb(185, 102, 0);
+        padding: 8px;
+        user-select: none;
+        border-radius: 4px;
+        border: 2px solid rgb(185, 102, 0);
+        color: #fff;
+        cursor: pointer;
+        transition: .2s;
+        margin-left: 8px;
+
+        &:hover{
+          background-color: transparent;
+          color: rgb(185, 102, 0);
+        }
+      }
+    }
+
+    .screenBtns{
+      display:flex;
+      margin-bottom: 16px;
+      .screenBtnsNumber{
+        width: 75%;
+        display: grid;
+        gap: 3.5%;
+        grid-template-columns: calc(92%/3) calc(92%/3) calc(92%/3);
+        padding: 10px;
+        .screenBtn{
+          padding: 16px 0;
+          border: 2px solid #ccc;
+          text-align: center;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: .2s;
+          user-select: none;
+          &:hover{
+            border-color: rgb(70, 70, 70);
+          }
+        }
+      }
+      .screenBtnsCalculation{
+        width: 25%;
+        display: grid;
+        gap: 3.5%;
+        grid-template-columns: auto;
+        padding: 10px;
+        .screenBtn{
+          padding: 16px 0;
+          border: 2px solid #ccc;
+          text-align: center;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: .2s;
+          user-select: none;
+          &:hover{
+            border-color: rgb(70, 70, 70);
+          }
+        }
+      }
+    }
+  }
+}
